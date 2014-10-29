@@ -206,7 +206,7 @@ class skeleton_main extends CI_Controller {
 	}
 	
 	public function location()
-    {
+	{
 		if (!$this->skeleton_auth->logged_in())
 		{
 			//redirect them to the login page

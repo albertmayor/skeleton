@@ -88,22 +88,23 @@
 						<!--ADREÇA-->
 						<div class="form-group">
 							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> ADREÇA: </label>
-							<input type="text" id="form-field-1" placeholder="Adreça" class="col-xs-10 col-sm-3" />
+							<input type="text" id="form-field-1" placeholder="Adreça" class="col-xs-5 col-sm-3" />
 						</div>
 						<!--ADREÇA FIN-->
 						<!--MUNICIPI I CP-->
 						<div class="form-group">
 							<label class="col-sm-3 control-label no-padding-right" for="form-field-1">MUNICIPI: </label>
-							<select class="col-xs-10 col-sm-3 chosen-select" id="form-field-select-3" data-placeholder="Sel·lecciona" >
+							<select class="col-xs-5 col-sm-3 chosen-select" id="form-field-select-3" data-placeholder="Sel·lecciona" >
 								<option value="">&nbsp;</option>
 								<option value="XE">Xerta</option>
 								<option value="TO">Tortosa</option>
 								<option value="AL">Aldover</option>
 								<option value="JE">Jesus</option>
 							</select>
-							
+						</div>
+						<div class="form-group">
 							<label class="col-sm-3 control-label no-padding-right" for="form-field-1">CODI POSTAL: </label>
-							<select class="col-xs-10 col-sm-3 chosen-select" id="form-field-select-3" data-placeholder="Sel·lecciona" >
+							<select class="col-xs-5 col-sm-3 chosen-select" id="form-field-select-3" data-placeholder="Sel·lecciona" >
 								<option value="">&nbsp;</option>
 								<option value="XE">43592</option>
 								<option value="TO">43590</option>
@@ -115,7 +116,6 @@
 						<!--TELEFON I CORREU-->
 						<div class="form-group">
 							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> TELEFON: </label>		<input type="text" id="form-field-1" placeholder="Telefon" class="col-xs-5 col-sm-3 input-mask-telefon" />
-							<small class="text-warning"></small>
 							<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> CORREU ELECTRONIC: </label>
 							<input type="text" id="form-field-1" placeholder="Correu electronic" class="col-xs-10 col-sm-3" />
 						</div>
@@ -123,13 +123,115 @@
 						<!--ALTRA ADREÇA-->
 						<div class="form-group">
 							<label class="col-sm-5 control-label no-padding-right" for="form-field-1"> SI TENIU UNA ALTRA ADREÇA, INDIQUEU-LA: </label>
+							<input type="text" id="form-field-1" placeholder="Adreça" class="col-xs-10 col-sm-5" />
 						</div>
-						<div class="form-group ">
-							<input type="text" id="form-field-1" placeholder="Adreça" class="col-xs-10 col-sm-3" />
-						</div>
-						<!--ALTRA ADREÇA FIN-->						
-									
+						<!--ALTRA ADREÇA FIN-->			
+						<!--RADIOS-->
+									<div class="form-group">
+										<div class="col-xs-1 col-sm-5">
+											<div class="control-group">
+												<label class="control-label bolder blue">COS</label>
 
+												<div class="checkbox">
+													<label>
+														<input name="form-field-checkbox" type="radio" class="ace" />
+														<span class="lbl"> Mestres</span>
+													</label>
+												</div>
+
+												<div class="checkbox">
+													<label>
+														<input name="form-field-checkbox" type="radio" class="ace" />
+														<span class="lbl"> Professorat d'Ensenyament secundari</span>
+													</label>
+												</div>
+
+												<div class="checkbox">
+													<label>
+														<input name="form-field-checkbox" type="radio" class="ace" />
+														<span class="lbl"> Professorat tècnic de Formació Professional</span>
+													</label>
+													</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-xs-12 col-sm-6">
+											<div class="control-group">
+												<label class="control-label bolder blue">SITUACIÓ</label>
+
+												<div class="radio">
+													<label>
+														<input name="form-field-radio" type="radio" class="ace" />
+														<span class="lbl"> Funcionari/ària</span>
+													</label>
+												</div>
+
+												<div class="radio">
+													<label>
+														<input name="form-field-radio" type="radio" class="ace" />
+														<span class="lbl"> Funcionari/ària en pràctiques</span>
+													</label>
+												</div>
+
+												<div class="radio">
+													<label>
+														<input name="form-field-radio" type="radio" class="ace" />
+														<span class="lbl"> Intern/ina</span>
+													</label>
+												</div>
+
+												<div class="radio">
+													<label>
+														<input name="form-field-radio" type="radio" class="ace" />
+														<span class="lbl"> Substitut/a</span>
+													</label>
+												</div>
+
+											</div>
+										</div>
+									</div><!-- /row -->
+						<!--RADIOS FIN-->		
+						<!--TITULACIÓ-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> TITULACIÓ QUE POSSEÏU: </label>
+							<input type="text" id="form-field-1" placeholder="escripció" class="col-xs-10 col-sm-3" />
+						</div>
+						<!--TITULACIÓ FIN-->	
+						<!--TITULACIÓ CATALA-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIVELL/TITULACIÓ DE CATALÀ: </label>
+							<input type="text" id="form-field-1" placeholder="Nivell" class="col-xs-10 col-sm-3" />
+						</div>
+						<!--TITULACIÓ FIN-->	
+						<!--DATA ALTA CENTRE-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> DATA D'ALTA AL CENTRE': </label>
+							<div class="row">
+								<div class="col-xs-10 col-sm-3">
+									<div class="input-group">
+										<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
+										<span class="input-group-addon">
+											<i class="icon-calendar bigger-110"></i>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--DATA ALTA CENTRE FIN-->
+						<!--ESPECIALITAT-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> ESPECIALITAT: </label>
+							<input type="text" id="form-field-1" placeholder="Especialitat" class="col-xs-10 col-sm-3" />
+						</div>
+						<!--ESPECIALITAT FIN-->	
+						<!--DESCRIPCIÓ-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> DESCRIPCIÓ: </label>
+							​<textarea id="txtArea" rows="7" cols="34"></textarea>
+						</div>
+						<!--DESCRIPCIÓ FIN-->	
+						<br />
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
@@ -146,9 +248,6 @@
 </script>
 <![endif]-->
 
-
-		<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
-		<script src="<?=base_url()?>assets/js/typeahead-bs2.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
@@ -173,8 +272,6 @@
 
 		<!-- ace scripts -->
 
-		<script src="<?=base_url()?>assets/js/ace-elements.min.js"></script>
-		<script src="<?=base_url()?>assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
 

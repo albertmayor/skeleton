@@ -180,10 +180,15 @@ class skeleton_main extends CI_Controller {
 		$skeleton_css_files=array();
 		
 		$bootstrap_min=base_url("assets/css/bootstrap.min.css");
+		$font_awesome=base_url("assets/css/font-awesome.min.css");
+		$ace_fonts=base_url("assets/css/ace-fonts.css");
+		$ace_min=base_url("assets/css/ace.min.css");
+		$ace_rtl=base_url("assets/css/ace-rtl.min.css");
+		$ace_skins=base_url("assets/css/ace-skins.min.css");		
 		$bootstrap_responsive=base_url("assets/css/bootstrap-responsive.min.css");
 		$font_awesome=base_url("assets/css/font-awesome.min.css");
 				
-		array_push($skeleton_css_files, $bootstrap_min, $bootstrap_responsive,$font_awesome);
+		array_push($skeleton_css_files, $bootstrap_min, $font_awesome, $ace_fonts, $ace_min, $ace_rtl, $ace_skins, $bootstrap_responsive,$font_awesome);
 		$header_data['skeleton_css_files']=$skeleton_css_files;			
 		
 		$skeleton_js_files=array();
@@ -196,15 +201,48 @@ class skeleton_main extends CI_Controller {
 			$jquery_js= base_url('assets/js/jquery-1.10.2.min.js');
 		}
 		
+		$ace_extra_js=base_url("assets/js/ace-extra.min.js");
 		$lazyload_js=base_url("assets/grocery_crud/js/common/lazyload-min.js");
 		$bootstrap_js=base_url("assets/js/bootstrap.min.js");
+		$typeahead_js=base_url("assets/js/typeahead-bs2.min.js");
+		$ace_elements_js=base_url("assets/js/ace-elements.min.js");
+		$ace_min_js=base_url("assets/js/ace.min.js");
 		
-		array_push($skeleton_js_files, $lodash_js ,$jquery_js , $bootstrap_js, $lazyload_js);
+		array_push($skeleton_js_files, $lodash_js ,$jquery_js , $bootstrap_js, $lazyload_js, $ace_extra_js, $typeahead_js, $ace_elements_js, $ace_min_js);
 		$header_data['skeleton_js_files']=$skeleton_js_files;	
 		
 		return $header_data;
 	}
 	
+	public function exemplecrud()
+	{
+		if (!$this->skeleton_auth->logged_in())
+		{
+			//redirect them to the login page
+			redirect($this->skeleton_auth->login_page, 'refresh');
+		}
+		
+		$this->current_table="location";
+        $this->grocery_crud->set_table($this->current_table);
+        
+        $output = $this->grocery_crud->render();
+                        
+        $this->_load_html_header($this->_get_html_header_data(),$output); 
+	    $this->_load_body_header();
+		
+		$default_values=$this->_get_default_values();
+		$default_values["table_name"]=$this->current_table;
+		$this->load->view('defaultvalues_view.php',$default_values); 
+			
+        $this->load->view('location_view.php',$output);     
+
+	    $this->_load_body_footer();	         
+        
+    } 
+
+
+
+
 	public function location()
 	{
 		if (!$this->skeleton_auth->logged_in())
@@ -885,7 +923,35 @@ class skeleton_main extends CI_Controller {
 	   *******************/
 	   $this->_load_body_footer();	                    
 } 
-
+	public function newprofe(){
+		if (!$this->skeleton_auth->logged_in())
+		{
+			//redirect them to the login page
+			redirect($this->skeleton_auth->login_page, 'refresh');
+		}
+		//redirect($this->skeleton_auth->login_page, 'refresh');
+		
+		//LOAD VIEW
+		
+		/*******************
+		/*      HEADER     *
+		/******************/
+		$this->_load_html_header($this->_get_html_header_data());
+		
+		
+		/*******************
+		/*      BODY     *
+		/******************/
+		$this->_load_body_header();
+		
+		$this->load->view('newprofe');
+		
+		 
+		/*******************
+		/*      FOOTER     *
+		*******************/
+		$this->_load_body_footer();		
+	}
 protected function set_common_columns_name()
 {
        //COMMON_COLUMNS                      

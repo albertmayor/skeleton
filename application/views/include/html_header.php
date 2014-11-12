@@ -48,13 +48,10 @@
       
 <style type="text/css">
      body {
-        padding-top: 60px;
-        padding-bottom: 60px;
-		font-family: Arial;
-                font-size: 14px;
-               
-		min-height:900
-		
+      padding-bottom: 60px;
+		  font-family: Arial;
+      font-size: 14px;
+      min-height:900
      }
     
 .navbar-text img {
